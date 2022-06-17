@@ -1,0 +1,13 @@
+.todo__btn-container {
+    display: flex;
+    gap: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .todo__btn-container {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       gap: 15px;
+    }
+}

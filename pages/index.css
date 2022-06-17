@@ -22,5 +22,8 @@
 /* TODO */
 @import url(../blocks/todo/todo.css);
 @import url(../blocks/todo/__text/todo__text.css);
+@import url(../blocks/todo/__btn-container/todo__btn-container.css);
 @import url(../blocks/todo/__btn/todo__btn.css);
 @import url(../blocks/button/button.css);
+@import url(../blocks/button/__img/button__img.css);
+@import url(../blocks/button/__img/_type/button__img_type_delete.css);

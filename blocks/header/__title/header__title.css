@@ -1,6 +1,15 @@
 .header__title {
-  font-weight: 900;
+  font-weight: 400;
   font-size: 60px;
   line-height: 73px;
   text-align: center;
+  color:azure;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 767px) {
+  .header__title {
+    font-size: 42px;
+    line-height: 1.2;
+  }
 }
