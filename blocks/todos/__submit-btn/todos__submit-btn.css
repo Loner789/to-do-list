@@ -11,3 +11,11 @@
     margin-left: 10px;
     cursor: pointer;
 }
+
+.todos__submit-btn:disabled {
+    opacity: 0.4;
+}
+
+.todos__submit-btn:disabled:hover {
+    opacity: 0.4;
+}

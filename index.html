@@ -16,9 +16,9 @@
       </h1>
     </header>
     <section class="todos" aria-label="Список дел.">
-      <form name="todo-form" class="todos__form">
-        <input type="text" name="todo" class="todos__input" placeholder="Следующее дело...">
-        <button class="todos__submit-btn button">
+      <form name="todo-form" class="todos__form" novalidate>
+        <input type="text" name="todo" class="todos__input" min-length="3" placeholder="Следующее дело..." required>
+        <button type="submit" class="todos__submit-btn button" disabled>
           Добавить
         </button>
       </form>
@@ -34,9 +34,8 @@
   </div>
   <template class="todo-template">
     <li class="todo">
-      <input type="checkbox" name="checkbox">
       <p class="todo__text"></p>
-      <button class="todo__btn todo__btn_type_edit button">
+      <button type="button" class="todo__btn todo__btn_type_edit button">
         <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.4246 21.5861H1.02206V4.8663H10.7842V3.8623H0.0180664V22.5901H19.4285V12.1687H18.4246V21.5861Z"
             fill="white" />
@@ -45,7 +44,7 @@
             fill="white" />
         </svg>
       </button>
-      <button class="todo__btn todo__btn_type_duplicate button">
+      <button type="button" class="todo__btn todo__btn_type_duplicate button">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M16.0066 12.2745V3.73211C16.0066 1.65872 14.3479 0 12.2745 0H3.73211C1.65872 0 0 1.65872 0 3.73211V12.2745C0 14.3479 1.65872 16.0066 3.73211 16.0066H12.2745C14.3479 16.0066 16.0066 14.3479 16.0066 12.2745ZM0.870825 12.2745V3.73211C0.870825 2.11486 2.15633 0.829358 3.77358 0.829358H12.316C13.9332 0.829358 15.2187 2.11486 15.2187 3.73211V12.2745C15.2187 13.8917 13.9332 15.1773 12.316 15.1773H3.73211C2.15633 15.1773 0.829358 13.8917 0.870825 12.2745Z"
@@ -55,7 +54,7 @@
             fill="white" />
         </svg>
       </button>
-      <button class="todo__btn todo__btn_type_delete button">
+      <button type="button" class="todo__btn todo__btn_type_delete button">
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect y="16.2637" width="23" height="1" transform="rotate(-45 0 16.2637)" fill="white" />
           <rect x="1" width="23" height="1" transform="rotate(45 1 0)" fill="white" />
