@@ -1,0 +1,120 @@
+/* MEDIA QUERIES */
+@mixin media_1440 {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin media_1280 {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin media_1040 {
+  @media screen and (max-width: 1040px) {
+    @content;
+  }
+}
+
+@mixin media_810 {
+  @media screen and (max-width: 810px) {
+    @content;
+  }
+}
+
+@mixin media_640 {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin media_420 {
+  @media screen and (max-width: 420px) {
+    @content;
+  }
+}
+
+/* PROPERTIES */
+@mixin remove-margins {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin small-font {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: $navy-blue-color;
+
+  @include media_1040 {
+    font-size: 14px;
+  }
+
+  @include media_640 {
+    font-size: 12px;
+  }
+
+  @include media_420 {
+    font-size: 10px;
+  }
+}
+
+@mixin language-btn-font {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: $navy-blue-color;
+
+  @include media_640 {
+    font-size: 14px;
+  }
+}
+
+@mixin small-font-footer {
+  @include small-font;
+  font-weight: 400;
+
+  @include media_1440 {
+    font-size: 14px;
+  }
+}
+
+@mixin large-font {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  color: $navy-blue-color;
+
+  @include media_1440 {
+    font-size: 20px;
+  }
+}
+
+@mixin block-side-indents {
+  padding: 0 100px;
+
+  @include media_1040 {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  @include media_810 {
+    padding-right: 30px;
+  }
+
+  @include media_640 {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  @include media_420 {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

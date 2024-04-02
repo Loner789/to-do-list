@@ -1,0 +1,181 @@
+@import '../../utils/styles/constants', '../../utils/styles/mixins';
+
+.subheader {
+    width: 100%;
+    min-height: 70px;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+
+    &_invisible {
+        display: none;
+    }
+
+    &__wrapper {
+        padding: 0;
+        width: 100%;
+        max-width: 1362px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        @include block-side-indents;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 21px 0;
+        opacity: 0.9;
+        @include small-font;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        position: relative;
+    }
+
+    &__language-btn {
+        margin: 0;
+        padding: 10px 31px 10px 46px;
+        min-width: 139px;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        height: 48px;
+        background: #FFF;
+        box-shadow: 0px 1px 5px rgba(0, 26, 66, 0.15);
+        border-radius: 10px;
+        box-sizing: border-box;
+        background-size: 26px 26px;
+        background-position: center left 10px;
+        background-repeat: no-repeat;
+        position: relative;
+        @include language-btn-font;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            width: 11px;
+            height: 6px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(0, -50%);
+            background-image: url(../../images/keyboard_arrow_down.svg);
+            background-size: 11px 6px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:hover {
+            background-color: $highlight-color;
+        }
+
+        &:active {
+            background-color: $active-item-color;
+        }
+    }
+
+    &__close-btn {
+        margin: 0;
+        padding: 0;
+        width: 13px;
+        height: 13px;
+        border: none;
+        background-image: url(../../images/close_icon.svg);
+        background-size: 13px 13px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &:active {
+            transform: scale(1.1);
+        }
+    }
+
+    &__languages-container {
+        margin: -15px 0 0;
+        padding: 15px 0 0;
+        position: absolute;
+        right: 40px;
+        top: 76px;
+        z-index: 3;
+        visibility: hidden;
+        transition: opacity 250ms, top 250ms, visibility 250ms;
+        opacity: 0;
+
+        &:hover {
+            visibility: visible;
+            opacity: 1;
+            top: 56px;
+        }
+    }
+
+    &__language-btn:hover+&__languages-container {
+        visibility: visible;
+        opacity: 1;
+        top: 56px;
+    }
+
+    &__languages {
+        margin: 0;
+        padding: 0;
+        width: 208px;
+        background: #FFF;
+        list-style: none;
+        box-shadow: 0px 1px 5px rgba(0, 26, 66, 0.15);
+        border-radius: 10px;
+    }
+
+    &__language {
+        width: 100%;
+        height: max-content;
+    }
+
+    &__language-link {
+        padding: 10px 10px 10px 46px;
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        background-size: 26px 26px;
+        background-position: center left 10px;
+        background-repeat: no-repeat;
+        text-decoration: none;
+        @include language-btn-font;
+        ;
+        cursor: pointer;
+
+        &_type {
+
+            &_german {
+                border-radius: 10px 10px 0 0;
+            }
+
+            &_other {
+                background-image: url(../../images/world_flag_icon.svg);
+                border-radius: 0 0 10px 10px;
+                border: none;
+                background-color: transparent;
+                text-align: left;
+            }
+        }
+
+        &:hover {
+            background-color: $highlight-color;
+            font-weight: 700;
+        }
+
+        &:active {
+            background-color: $active-item-color;
+            font-weight: 700;
+        }
+    }
+}

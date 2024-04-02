@@ -1,0 +1,129 @@
+@import '../../utils/styles/constants', '../../utils/styles/mixins';
+
+.burger-popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $highlight-color;
+    z-index: 2;
+    display: none;
+
+    &_opened {
+        display: flex;
+    }
+
+    &__container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 917px;
+        @include block-side-indents;
+    }
+
+    &__form {
+        margin: 47px 0 49px;
+        padding: 0;
+        width: 100%;
+        height: 41px;
+        display: flex;
+        border-bottom: 1px solid $navy-blue-color-2;
+    }
+
+    &__search {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        @include small-font-footer;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__search-submit {
+        margin: 0;
+        padding: 0;
+        width: 41px;
+        height: 41px;
+        border: none;
+        background-color: transparent;
+        background-image: url(../../images/search_icon.svg);
+        background-size: 41px 41px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    &__menu-wrapper {
+        width: 100%;
+    }
+
+    &__menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px 40px;
+
+        @include media_1040 {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__menu-item {
+        min-width: 145px;
+
+        @include media_1040 {
+            background-image: url(../../images/keyboard_arrow_down.svg);
+            background-size: 11px 6px;
+            background-position: right 0 top 10px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    }
+
+    &__menu-item-text {
+        margin: 0;
+        padding: 0;
+        @include large-font;
+    }
+
+    &__submenu {
+        @include media_1040 {
+            padding-left: 10px;
+            display: none;
+        }
+
+        &_visible {
+            display: flex;
+        }
+    }
+
+    &__submenu-items {
+        margin: 0;
+        padding: 25px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__submenu-item-link {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        @include small-font-footer;
+        opacity: 0.7;
+
+        @include media_1440 {
+            font-size: 14px;
+        }
+
+        &:hover {
+            font-weight: 500;
+            opacity: 1;
+        }
+    }
+}
